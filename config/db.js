@@ -3,6 +3,7 @@ require('dotenv').config();
 
 const dbConfig = {
   host: process.env.DB_HOST,
+  port: process.env.DB_PORT || '5432', // Added this line to set the port
   dialect: 'postgres',
   logging: false,
 };
@@ -11,8 +12,8 @@ if (process.env.NODE_ENV === 'production') {
   dbConfig.dialectOptions = {
     ssl: {
       require: true,
-      rejectUnauthorized: false
-    }
+      rejectUnauthorized: false,
+    },
   };
 }
 
