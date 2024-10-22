@@ -1,0 +1,21 @@
+<h2>Your Dashboard</h2>
+
+<section class="user-posts">
+  {{#if posts.length}}
+    {{#each posts}}
+      <article class="post-item">
+        <h3><a href="/dashboard/edit/{{id}}">{{title}}</a></h3>
+        <p>Created on {{formatDate createdAt}}</p>
+        <!-- Button to delete the post -->
+        <button class="delete-post" data-id="{{id}}">Delete</button>
+      </article>
+    {{/each}}
+  {{else}}
+    <p>You haven't created any posts yet. Start writing!</p>
+  {{/if}}
+</section>
+
+<!-- Link to create a new post -->
+<a href="/dashboard/new" class="btn new-post-btn">Create New Post</a>
+
+<script src="/js/dashboard.js"></script>

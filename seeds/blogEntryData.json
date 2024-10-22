@@ -1,0 +1,14 @@
+[
+  {
+    "title": "The Future of AI in Web Development",
+    "content": "As AI continues to evolve, its impact on web development is becoming increasingly significant. From automated coding assistants to intelligent design tools, AI is reshaping how we build and maintain websites..."
+  },
+  {
+    "title": "Mastering React Hooks",
+    "content": "React Hooks have revolutionized the way we write React components. In this post, we'll dive deep into the most commonly used hooks like useState, useEffect, and useContext, and explore some advanced patterns..."
+  },
+  {
+    "title": "The Rise of Serverless Architecture",
+    "content": "Serverless architecture is changing the game for developers and businesses alike. By eliminating the need to manage servers, serverless allows us to focus more on writing code and less on infrastructure..."
+  }
+]

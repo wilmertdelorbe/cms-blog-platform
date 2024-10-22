@@ -1,0 +1,15 @@
+<section class="blog-posts">
+  {{#each posts}}
+    <article class="post-card">
+      <h2><a href="/post/{{id}}">{{title}}</a></h2>
+      <p class="post-meta">Posted by {{author.username}} on {{formatDate createdAt}}</p>
+      <div class="post-excerpt">
+        {{truncate content 150}}
+      </div>
+    </article>
+  {{else}}
+    <p>No blog posts available. Be the first to create one!</p>
+  {{/each}}
+</section>
+
+<!-- TODO: Add pagination for when we have many blog posts -->
