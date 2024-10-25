@@ -32,6 +32,8 @@ To use this application locally:
 
 The deployed version can be accessed [here](https://cms-blog-platform.onrender.com).
 
+Live Demo: [https://cms-blog-axmr.onrender.com](https://cms-blog-axmr.onrender.com)
+
 ## Features
 
 - User authentication (signup, login, logout)
