@@ -1,8 +1,7 @@
 const router = require('express').Router();
 const { BlogEntry, Author, Feedback } = require('../../models');
-const { requireAuth } = require('../../utils/authHelpers');
+const { requireAuth } = require('../../utils/authGuard');
 
-// Create a new blog entry
 router.post('/', requireAuth, async (req, res) => {
   try {
     const newBlogEntry = await BlogEntry.create({
@@ -15,7 +14,6 @@ router.post('/', requireAuth, async (req, res) => {
   }
 });
 
-// Update an existing blog entry
 router.put('/:id', requireAuth, async (req, res) => {
   try {
     const [updatedRows] = await BlogEntry.update(req.body, {
@@ -34,7 +32,6 @@ router.put('/:id', requireAuth, async (req, res) => {
   }
 });
 
-// Delete a blog entry
 router.delete('/:id', requireAuth, async (req, res) => {
   try {
     const deletedRows = await BlogEntry.destroy({
@@ -53,7 +50,6 @@ router.delete('/:id', requireAuth, async (req, res) => {
   }
 });
 
-// Get a single blog entry with comments
 router.get('/:id', async (req, res) => {
   try {
     const blogEntry = await BlogEntry.findByPk(req.params.id, {

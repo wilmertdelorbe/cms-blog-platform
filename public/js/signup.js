@@ -1,36 +1,24 @@
 const signupFormHandler = async function (event) {
   event.preventDefault();
 
-  const username = document
-    .querySelector('#username-input-signup')
-    .value.trim();
-  const password = document
-    .querySelector('#password-input-signup')
-    .value.trim();
+  const username = document.querySelector('#username-signup').value.trim();
+  const password = document.querySelector('#password-signup').value.trim();
 
-  if (password.length >= 8 && username) {
+  if (username && password) {
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({
-        username,
-        password,
-      }),
+      body: JSON.stringify({ username, password }),
       headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
-      // Redirect to homepage after successful signup
-      document.location.replace('/');
+      document.location.replace('/dashboard');
     } else {
-      alert('Failed to sign up. Please try again.');
+      alert('Failed to sign up');
     }
-  } else {
-    alert(
-      'Please provide a valid username and ensure your password is at least 8 characters long.'
-    );
   }
 };
 
 document
-  .querySelector('#signup-form')
+  .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);
